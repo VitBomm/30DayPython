@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <record id="view_hr_import_form" model="ir.ui.view">
+            <field name="name">Human Resource Import</field>
+            <field name="model">hr.import</field>
+            <field name="arch" type="xml">
+                <form>
+                    <group>
+                        <field name="start_date" required="1"/>
+                        <field name="end_date" required="1"/>
+                        <field name="file" filename="filename"/>
+                        <field name="filename"/>
+                        <field name="company_id"/>
+                        <field name="employee_ids"/>
+                    </group>
+                    <footer>
+                        <button name="action_import_timesheet" string="string" type="object" class="oe_highlight"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+        <act_window id="action_hr_import_form" 
+            name="Import Timesheet"
+            res_model="hr.import"
+            view_mode="form"
+            target="new"
+        />
+        <menuitem id="menu_hr_import" action="action_hr_import_form" parent="xb_hr_time_mngt.menu_time_management" sequence="200"/>
+    </data>
+</odoo>
