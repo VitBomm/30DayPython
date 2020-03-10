@@ -8,5 +8,5 @@ for i in range(n):
         word_dict[word] += 1
 
 print(len(word_dict))
-print(' '.join(map(str,word_dict.values())))
+print(*word_dict.values())
         
